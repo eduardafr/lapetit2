@@ -1,0 +1,169 @@
+:root{
+    --creme: #faf5ea;
+    --bordo: #7b1e2b;
+    --dourado: #b08d57;
+    --texto: #3b2f2f;
+    --azul: #1f3a7a;
+    --vermelho: #c8102e;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background: var(--creme);
+    color: var(--texto);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.15rem;
+    border-top: 8px solid transparent;
+    border-image: linear-gradient(to right, var(--azul) 33.3%, #fff 33.3% 66.6%, var(--vermelho) 66.6%) 1;
+}
+
+/* Cabeçalho */
+header{
+    text-align: center;
+    padding: 50px 20px 20px;
+}
+
+.sobretitulo{
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--dourado);
+    margin: 0;
+    font-size: 1rem;
+}
+
+h1{
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    color: var(--bordo);
+    margin: 10px 0;
+}
+
+.subtitulo{
+    font-style: italic;
+    margin: 0;
+}
+
+/* Base original */
+main{
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-around;
+    margin-bottom: 40px;
+}
+
+/* Títulos de categoria */
+main > div{
+    text-align: center;
+    margin-top: 30px;
+}
+
+h3{
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--bordo);
+    display: inline-block;
+    position: relative;
+    padding: 0 50px;
+    margin: 0 0 25px;
+}
+
+h3::before,
+h3::after{
+    content: "❦";
+    color: var(--dourado);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.4rem;
+}
+
+h3::before{ left: 0; }
+h3::after{ right: 0; }
+
+/* Cartões das receitas */
+article{
+    width: 360px;
+    max-width: 100%;
+    background: #fff;
+    border: 1px solid var(--dourado);
+    outline: 1px solid var(--dourado);
+    outline-offset: -8px;
+    padding: 18px 18px 26px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(60, 30, 30, 0.12);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+article:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 14px 28px rgba(60, 30, 30, 0.2);
+}
+
+article img{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 16px;
+    border: 1px solid var(--dourado);
+}
+
+h4{
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--bordo);
+    margin: 0 0 6px;
+}
+
+article p{
+    font-style: italic;
+    color: var(--dourado);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    margin: 0 0 10px;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li{
+    padding: 5px 0;
+    border-bottom: 1px dotted #d9cbb0;
+}
+
+li:last-child{
+    border-bottom: none;
+}
+
+/* Rodapé */
+footer{
+    text-align: center;
+    padding: 30px 20px 50px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--bordo);
+    font-size: 1.4rem;
+}
+
+@media (max-width: 600px){
+    h1{ font-size: 2.4rem; }
+    h3{ padding: 0 40px; font-size: 1.6rem; }
+}
